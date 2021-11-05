@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  height: 100vh;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #9bc4cb;
+}
+#todoAdd {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5rem;
+}
+
+#todoAdd:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#inputTodo {
+  border: none;
+  padding: 15px 20px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5rem;
+  width: 40vw;
+}
+
+#lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.todo {
+  background-color: #dbefbc;
+  width: 50vw;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+
+.todoText {
+  word-wrap: break-word;
+  flex: 70%;
+  margin: 5px;
+  padding: 8px 10px;
+  font-size: 1.5rem;
+}
+
+.deleteBtn {
+  border: none;
+  background-color: #f44336;
+  flex: 10%;
+  width: 30px;
+  max-width: 30px;
+  height: 30px;
+  max-height: 30px;
+  margin-right: 5px;
+}
