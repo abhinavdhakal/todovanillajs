@@ -15,8 +15,7 @@ body {
   align-items: center;
   background: #9bc4cb;
 }
-#todoAdd {
-  background-color: #4caf50; /* Green */
+.mainButtons {
   border: none;
   color: white;
   padding: 15px 32px;
@@ -24,12 +23,19 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 1.5rem;
+
   cursor: pointer;
 }
-
-#todoAdd:hover {
+.mainButtons:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#clearBtn {
+  background-color: #f44336;
+}
+#todoAdd {
+  background-color: #4caf50; /* Green */
 }
 
 #inputTodo {
@@ -78,8 +84,19 @@ body {
   margin-right: 5px;
   cursor: pointer;
 }
-.finished{
-	text-decoration: line-through;
-	font-style: italic;
-	color: brown;
+.finished {
+  text-decoration: line-through;
+  font-style: italic;
+  color: brown;
+}
+a {
+  text-decoration: none;
+  color: blueviolet;
+}
+
+.left {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 2vh;
 }
