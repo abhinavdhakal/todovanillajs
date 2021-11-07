@@ -5,15 +5,37 @@
   padding: 0;
 }
 
+.theme-light {
+  --background: #9bc4cb;
+  --foreground: #dbefbc;
+  --green: #4caf50;
+  --red: #f44336;
+  --text: black;
+  --delete: #fb4934;
+}
+.theme-dark {
+  --background: #1d2021;
+  --foreground: #d5c4a1;
+  --green: #689d6a;
+  --red: #af3a03;
+  --text: #8ec07c;
+  --delete: #cc241d;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
 body {
   font-family: "Nunito", sans-serif;
   font-weight: 600;
   height: 100vh;
-  color: #000000;
+  color: var(--text);
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #9bc4cb;
+  /* background: ; */
+  background: var(--background);
 }
 .mainButtons {
   border: none;
@@ -23,7 +45,6 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 1.5rem;
-
   cursor: pointer;
 }
 .mainButtons:hover {
@@ -32,22 +53,27 @@ body {
 }
 
 #clearBtn {
-  background-color: #f44336;
+  /* background-color: #f44336; */
+  background-color: var(--red);
 }
 #todoAdd {
-  background-color: #4caf50; /* Green */
+  /* background-color: #4caf50; */
+  background-color: var(--green);
 }
 
 #inputTodo {
   border: none;
   padding: 15px 20px;
+  margin-bottom: 5px;
   text-align: left;
   text-decoration: none;
   display: inline-block;
   font-size: 1.5rem;
   width: 40vw;
 }
-
+#inputTodo:focus-visible {
+  border: none;
+}
 #lists {
   display: flex;
   justify-content: center;
@@ -55,7 +81,9 @@ body {
   flex-direction: column;
 }
 .todo {
-  background-color: #dbefbc;
+  /* background-color: #dbefbc; */
+  background-color: var(--foreground);
+  color: black;
   width: 50vw;
   min-height: 2.5rem;
   display: flex;
@@ -75,28 +103,48 @@ body {
 
 .deleteBtn {
   border: none;
-  background-color: #f44336;
+  /* background-color: #f44336; */
+  background-color: var(--delete);
   flex: 10%;
   width: 30px;
   max-width: 30px;
   height: 30px;
   max-height: 30px;
-  margin-right: 5px;
+  margin-right: 10px;
+  border-radius: 2px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .finished {
   text-decoration: line-through;
   font-style: italic;
-  color: brown;
+  color: #af3a03;
 }
 a {
   text-decoration: none;
-  color: blueviolet;
+  color: var(--text);
 }
 
 .left {
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   left: 10px;
   font-size: 2vh;
+}
+.right {
+  position: fixed;
+  bottom: 1vw;
+  right: 2vw;
+}
+.themeChanger {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+}
+
+#themeBtn:hover {
+  cursor: pointer;
 }

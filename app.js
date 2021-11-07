@@ -4,7 +4,13 @@ let lists = document.getElementById("lists");
 let inputTodo = document.getElementById("inputTodo");
 let todoAdd = document.getElementById("todoAdd");
 let clearBtn = document.getElementById("clearBtn");
+let themeBtn = document.getElementById("themeBtn");
+let html = document.getElementById("html");
 let todoMap;
+
+let themeIconName = "fa-moon-o";
+
+themeBtn.innerHTML = `<i class="fa ${themeIconName}"></i>`;
 
 function saveToLocal(Map) {
   localStorage.setItem("todos", JSON.stringify([...Map]));
@@ -49,13 +55,13 @@ function addInList(list, index, hi) {
   newTodo.indexN = index;
   newTodo.classList.add("todo");
   newTodo.addEventListener("click", (e) => {
-    if (newTodo.classList.contains("finished")) {
-      newTodo.classList.remove("finished");
+    if (newTodo.firstElementChild.classList.contains("finished")) {
+      newTodo.firstElementChild.classList.remove("finished");
     } else {
-      newTodo.classList.add("finished");
+      newTodo.firstElementChild.classList.add("finished");
     }
   });
-  newTodo.innerHTML = `<div class="todoText">${list}</div> <button class="deleteBtn" onclick=destroyElement(this) style="text-decoration:none" >X</button>`;
+  newTodo.innerHTML = `<div class="todoText">${list}</div> <button class="deleteBtn" onclick=destroyElement(this) style="text-decoration:none" ><i class="material-icons">delete</i></button>`;
   lists.appendChild(newTodo);
 }
 
@@ -71,3 +77,44 @@ clearBtn.addEventListener("click", () => {
   saveToLocal(todoMap);
   location.reload();
 });
+
+if (localStorage.getItem("theme")) {
+  if (localStorage.getItem("theme") === "theme-light") {
+    setLightTheme();
+    console.log("setlight");
+  } else {
+    setDarkTheme();
+    console.log("setdark");
+  }
+
+  themeBtn.innerHTML = `<i class="fa ${themeIconName}"></i>`;
+}
+
+themeBtn.addEventListener("click", themeChange);
+
+function themeChange() {
+  if (html.classList.contains("theme-light")) {
+    setDarkTheme();
+  } else {
+    setLightTheme();
+  }
+  themeBtn.innerHTML = `<i class="fa ${themeIconName}"></i>`;
+}
+
+function setDarkTheme() {
+  html.classList.remove("theme-light");
+  html.classList.add("theme-dark");
+  localStorage.setItem("theme", "theme-dark");
+  themeIconName = "fa-sun-o";
+  themeBtn.style.backgroundColor = "#3c3836";
+  themeBtn.style.color = "#8ec07c";
+}
+
+function setLightTheme() {
+  html.classList.add("theme-light");
+  html.classList.remove("theme-dark");
+  localStorage.setItem("theme", "theme-light");
+  themeIconName = "fa-moon-o";
+  themeBtn.style.backgroundColor = "white";
+  themeBtn.style.color = "black";
+}
