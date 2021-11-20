@@ -1,17 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id ="html" lang="en" class="theme-light">
 <head>
 	<meta charset="UTF-9">
 	<title>ToDo</title>
 	<link rel="stylesheet" href="style.css"></link>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 	<center><h1>ToDo</h1></center>
 	<section id="input">
     <input type="text" id="inputTodo">
-	<button type="button" id= "todoAdd"> Add </button>
+	<button type="button" id= "todoAdd" class = "mainButtons"> Add </button>
+	<button type="button" id="clearBtn"  class = "mainButtons" > Clear </button>
 	</section>
 	<section id="lists"></section>
+
+	<footer >
+		<div class="left">
+		<a target="_blank" href="https://github.com/AbhinavDhakal">Abhinav Dhakal</a>
+	    |
+		<a target="_blank" href="https://github.com/AbhinavDhakal/todovanillajs">Code</a>
+	</div>
+	<div class="right">
+		<button id="themeBtn" class="themeChanger"></button>
+	</div>
+    </footer>
+		
 </body>
 <script src="app.js"></script>
 </html>
