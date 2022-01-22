@@ -81,7 +81,6 @@ body {
   flex-direction: column;
 }
 .todo {
-  /* background-color: #dbefbc; */
   background-color: var(--foreground);
   color: black;
   width: 50vw;
@@ -89,7 +88,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: row;
   margin: 5px;
 }
 
