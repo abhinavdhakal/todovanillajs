@@ -9,7 +9,6 @@ let html = document.getElementById("html");
 let todoMap;
 
 let themeIconName = "fa-moon-o";
-
 themeBtn.innerHTML = `<i class="fa ${themeIconName}"></i>`;
 
 function saveToLocal(Map) {
@@ -155,7 +154,7 @@ function editTodo(yes) {
 	editInput.value = yes.parentElement.firstElementChild.innerText;
 
 	let whenEditFinished = () => {
-		if (editInput.value === "" || Number(editInput) === 0) {
+		if (Number(editInput.value) === 0) {
 			editInput.value = todoText.innerText;
 		}
 		todoText.innerText = editInput.value;
